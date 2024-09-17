@@ -1,0 +1,18 @@
+<form #form="ngForm" (ngSubmit)="sendOrder(form)">
+    <h3>Pedido</h3>
+    <div>
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel"
+        [ngClass]="{'is-invalid': nombre.invalid  && (nombre.dirty || nombre.touched),'is-valid': nombre.valid }"
+        [(ngModel)]="pedido.name" required>
+    </div>
+    <div>
+        <label for="description" class="form-label">Pedido:</label>
+        <input type="text" class="form-control" id="nombre" name="description" #description="ngModel"
+        [ngClass]="{'is-invalid': description.invalid  && (description.dirty || description.touched),'is-valid': description.valid }"
+        [(ngModel)]="pedido.description" required>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Ordenar</button>
+    </div>
+</form>

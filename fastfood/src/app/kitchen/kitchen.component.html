@@ -1,0 +1,17 @@
+<h3>Pendiente de cocinar</h3>
+<div>
+<ul>
+    @for (pedido of lstPedidos; track $index) {
+        <li>({{pedido.number}}) - {{pedido.description}} </li>    
+        <button (click)="cook($index)">Cocinar</button>   
+    }
+</ul>
+</div>
+@if (toCook.number) {
+    <h3>Pedidos en coccion</h3>
+    <ul>
+        <li>({{toCook.number}}) - {{toCook.name}} {{toCook.description}}</li>
+    </ul>
+}
+
+
