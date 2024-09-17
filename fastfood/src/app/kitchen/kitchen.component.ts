@@ -22,4 +22,9 @@ export class KitchenComponent {
     this.toCook = this.lstPedidos[index];
     this.lstPedidos.splice(index, 1);    
   }
+
+  pedidoDone(){
+    this.service.toDeliver(this.toCook)
+    this.toCook = new Pedido();
+  }
 }

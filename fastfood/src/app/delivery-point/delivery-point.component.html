@@ -1,0 +1,7 @@
+<p>Pedidos Listos para entregar:</p>
+<ul>
+    @for (pedido of lstToDeliver; track $index) {
+        <li>{{pedido.number}} - {{pedido.name}}</li>
+        <button>Entregar!</button>
+    }
+</ul>

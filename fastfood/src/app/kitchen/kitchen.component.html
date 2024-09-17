@@ -2,8 +2,8 @@
 <div>
 <ul>
     @for (pedido of lstPedidos; track $index) {
-        <li>({{pedido.number}}) - {{pedido.description}} </li>    
-        <button (click)="cook($index)">Cocinar</button>   
+        <li>({{pedido.number}}) - {{pedido.description}} </li>
+            <button (click)="cook($index)" [disabled]="toCook.number">Cocinar</button>      
     }
 </ul>
 </div>
@@ -12,6 +12,7 @@
     <ul>
         <li>({{toCook.number}}) - {{toCook.name}} {{toCook.description}}</li>
     </ul>
+    <button (click)="pedidoDone()">Pedido terminado!</button>
 }
 
 
