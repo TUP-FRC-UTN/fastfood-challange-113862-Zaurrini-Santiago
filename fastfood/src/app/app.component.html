@@ -1,3 +1,8 @@
+<h1>Restaurant Fast Food</h1>
+<p>Pedidos ingresados:</p>
+@for (pedido of lstPedidos; track $index) {
+    <li>Nombre: {{pedido.name}} - Descripcion: {{pedido.description}} - Numero: {{pedido.number}} | </li>      
+}
 <app-delivery-point></app-delivery-point>
 <app-pos></app-pos>
 <app-kitchen></app-kitchen>

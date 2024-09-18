@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PosComponent } from "./pos/pos.component";
 import { KitchenComponent } from "./kitchen/kitchen.component";
 import { DeliveryPointComponent } from "./delivery-point/delivery-point.component";
+import { RestServiceService } from './rest-service.service';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,6 @@ import { DeliveryPointComponent } from "./delivery-point/delivery-point.componen
 })
 export class AppComponent {
   title = 'fastfood';
+  private service = inject(RestServiceService);
+  lstPedidos = this.service.getPedidos();
 }

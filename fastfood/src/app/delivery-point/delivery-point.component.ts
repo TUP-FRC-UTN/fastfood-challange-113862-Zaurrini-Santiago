@@ -13,4 +13,9 @@ export class DeliveryPointComponent {
   private service = inject(RestServiceService);
   lstToDeliver: Pedido[] = this.service.getToDeliver();
 
+
+  deliver(index: number) {
+    alert("El pedido ha sido entregado!");
+    this.lstToDeliver.splice(index, 1);
+  }
 }
